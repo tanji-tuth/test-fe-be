@@ -1,10 +1,8 @@
-import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import reactLogo from '../assets/react.svg'
 import viteLogo from '/vite.svg'
 
 const HomePage = () => {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-slate-900 text-white px-6">
       <div className="flex gap-8 mb-8">
@@ -29,16 +27,20 @@ const HomePage = () => {
       </h1>
 
       <div className="bg-slate-800 rounded-xl p-6 text-center shadow-lg mb-6">
-        <button
-          onClick={() => setCount(count + 1)}
-          className="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-2 rounded-lg mb-4 transition"
-        >
-          count is {count}
-        </button>
-
-        <p className="text-slate-300">
-          Edit <code className="bg-slate-700 px-2 py-1 rounded">src/App.jsx</code> and save to test HMR
-        </p>
+        <div className="flex flex-col gap-4">
+          <Link
+            to="/test-health"
+            className="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-6 py-2 rounded-lg transition"
+          >
+            Test Health
+          </Link>
+          <Link
+            to="/test-create-post"
+            className="bg-green-600 hover:bg-green-500 text-white font-semibold px-6 py-2 rounded-lg transition"
+          >
+            Test Create Post
+          </Link>
+        </div>
       </div>
 
       <p className="text-slate-400 text-sm">
